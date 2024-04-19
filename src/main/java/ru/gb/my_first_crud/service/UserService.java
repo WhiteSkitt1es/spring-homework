@@ -18,9 +18,19 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public User getOne(Long id) {
+        return userRepository.findById(id);
+    }
+
     public User saveUser(User user){
         return userRepository.save(user);
     }
 
-    //public void deleteById(int id)
+    public void updateUser(User user){
+        userRepository.update(user);
+    }
+
+    public void deleteById(long id) {
+        userRepository.deleteById(id);
+    }
 }
